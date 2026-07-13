@@ -1,3 +1,36 @@
+// intro screen: typewriter effect, then reveal main content
+document.documentElement.style.overflow = 'hidden';
+const introText = 'Memastikan sesuatu berjalan benar, dan berjalan tepat waktu.';
+const typedTextEl = document.getElementById('typedText');
+const introEnter = document.getElementById('introEnter');
+const introEl = document.getElementById('intro');
+const introReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let charIndex = 0;
+function typeNext(){
+  if(charIndex < introText.length){
+    typedTextEl.textContent += introText.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeNext, 35);
+  } else {
+    introEnter.classList.add('show');
+  }
+}
+if(introReducedMotion){
+  typedTextEl.textContent = introText;
+  introEnter.classList.add('show');
+} else {
+  setTimeout(typeNext, 400);
+}
+
+function dismissIntro(){
+  introEl.classList.add('hide');
+  document.documentElement.style.overflow = '';
+}
+introEnter.addEventListener('click', dismissIntro);
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter' && !introEl.classList.contains('hide')) dismissIntro();
+});
+
 // theme toggle with persistence
 const root = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
@@ -134,6 +167,28 @@ if(rerunBtn){
       }, i * 400);
     });
   });
+}
+
+// gallery lightbox: click a screenshot to view it larger
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+document.querySelectorAll('.gallery-thumb').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const imgEl = btn.querySelector('img');
+    lightboxImg.src = btn.dataset.full;
+    lightboxImg.alt = imgEl.alt;
+    lightbox.classList.add('show');
+  });
+});
+function closeLightbox(){
+  lightbox.classList.remove('show');
+  lightboxImg.src = '';
+}
+if(lightboxClose){
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
 }
 
 // small easter egg for the curious

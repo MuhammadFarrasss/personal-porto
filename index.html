@@ -19,6 +19,13 @@
 </head>
 <body>
 
+<div class="intro" id="intro">
+  <p class="intro-eyebrow">$ FRS</p>
+  <h1 class="intro-headline"><span id="typedText"></span><span class="intro-cursor">|</span></h1>
+  <button class="intro-enter" id="introEnter">masuk ↓</button>
+</div>
+
+
 <div class="topbar">
   <div class="repo">
     <span class="repo-name">muhammad-farras / portfolio</span>
@@ -165,6 +172,19 @@
         </details>
         <div class="log-line dim static"><span class="log-check">✓</span><span class="log-id">TC-05…12</span><span class="log-desc">8 test case lainnya</span><span class="log-tag">pass</span></div>
       </div>
+
+      <p class="lane-label" style="margin-top:20px;">artifacts</p>
+      <div class="gallery">
+        <button class="gallery-thumb" data-full="screenshots/dashboard.png">
+          <img src="screenshots/dashboard.png" alt="Screenshot dashboard riwayat servis kendaraan">
+        </button>
+        <button class="gallery-thumb" data-full="screenshots/form-servis.png">
+          <img src="screenshots/form-servis.png" alt="Screenshot form tambah data servis">
+        </button>
+        <button class="gallery-thumb" data-full="screenshots/test-report.png">
+          <img src="screenshots/test-report.png" alt="Screenshot test report Katalon Studio">
+        </button>
+      </div>
     </div>
   </details>
 
@@ -225,6 +245,11 @@
 <div id="toast" class="toast">
   <span class="toast-icon">✓</span>
   <span class="toast-text" id="toastMessage"></span>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Tutup gambar">✕</button>
+  <img id="lightboxImg" src="" alt="">
 </div>
 
 <script src="script.js"></script>
