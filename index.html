@@ -20,7 +20,7 @@
 <body>
 
 <div class="intro" id="intro">
-  <p class="intro-eyebrow">$ FRS</p>
+  <p class="intro-eyebrow">$ whoami</p>
   <h1 class="intro-headline"><span id="typedText"></span><span class="intro-cursor">|</span></h1>
   <button class="intro-enter" id="introEnter">masuk ↓</button>
 </div>
@@ -175,15 +175,48 @@
 
       <p class="lane-label" style="margin-top:20px;">artifacts</p>
       <div class="gallery">
-        <button class="gallery-thumb" data-full="screenshots/dashboard.png">
-          <img src="screenshots/dashboard.png" alt="Screenshot dashboard riwayat servis kendaraan">
-        </button>
-        <button class="gallery-thumb" data-full="screenshots/form-servis.png">
-          <img src="screenshots/form-servis.png" alt="Screenshot form tambah data servis">
-        </button>
-        <button class="gallery-thumb" data-full="screenshots/test-report.png">
-          <img src="screenshots/test-report.png" alt="Screenshot test report Katalon Studio">
-        </button>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/dashboardAdmin.png">
+            <img src="screenshots/dashboardAdmin.png" alt="Screenshot dashboard admin">
+          </button>
+          <figcaption>dashboard admin</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/addKendaraan.png">
+            <img src="screenshots/addKendaraan.png" alt="Screenshot tambah data kendaraan">
+          </button>
+          <figcaption>tambah kendaraan</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/generateKey.png">
+            <img src="screenshots/generateKey.png" alt="Screenshot generate key akses">
+          </button>
+          <figcaption>generate key</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/pengajuanKerusakan.png">
+            <img src="screenshots/pengajuanKerusakan.png" alt="Screenshot pengajuan laporan kerusakan">
+          </button>
+          <figcaption>pengajuan kerusakan</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/pengajuanTowing.png">
+            <img src="screenshots/pengajuanTowing.png" alt="Screenshot pengajuan towing">
+          </button>
+          <figcaption>pengajuan towing</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/reimburseService.png">
+            <img src="screenshots/reimburseService.png" alt="Screenshot reimburse biaya service">
+          </button>
+          <figcaption>reimburse service</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="gallery-thumb" data-full="screenshots/reimburseBensin.png">
+            <img src="screenshots/reimburseBensin.png" alt="Screenshot reimburse biaya bensin">
+          </button>
+          <figcaption>reimburse bensin</figcaption>
+        </figure>
       </div>
     </div>
   </details>
@@ -249,7 +282,10 @@
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose" aria-label="Tutup gambar">✕</button>
-  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
 </div>
 
 <script src="script.js"></script>

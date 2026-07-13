@@ -172,12 +172,15 @@ if(rerunBtn){
 // gallery lightbox: click a screenshot to view it larger
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
 document.querySelectorAll('.gallery-thumb').forEach(btn => {
   btn.addEventListener('click', () => {
     const imgEl = btn.querySelector('img');
+    const caption = btn.parentElement.querySelector('figcaption');
     lightboxImg.src = btn.dataset.full;
     lightboxImg.alt = imgEl.alt;
+    lightboxCaption.textContent = caption ? caption.textContent : '';
     lightbox.classList.add('show');
   });
 });
