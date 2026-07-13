@@ -1,0 +1,30 @@
+.achievement{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:280px;
+    padding:18px;
+    border-radius:12px;
+    background:var(--panel);
+    border:1px solid var(--green);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+    opacity:0;
+    transform:translateY(30px);
+
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s;
+
+    z-index:1000;
+}
+
+.achievement.show{
+    opacity:1;
+    transform:translateY(0);
+    visibility:visible;
+}

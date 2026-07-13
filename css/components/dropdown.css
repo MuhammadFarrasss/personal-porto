@@ -1,0 +1,58 @@
+/* ==========================================
+   EXPLORATORY DROPDOWN
+========================================== */
+
+.exploratory-dropdown{
+    margin:40px 0;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--panel);
+    overflow:hidden;
+}
+
+.exploratory-dropdown summary{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    list-style:none;
+    padding:22px 24px;
+}
+
+.exploratory-dropdown summary::-webkit-details-marker{
+    display:none;
+}
+
+.dropdown-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.dropdown-icon{
+    font-size:34px;
+}
+
+.dropdown-left h3{
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.dropdown-left p{
+    color:var(--text-dim);
+    font-size:14px;
+}
+
+.dropdown-arrow{
+    font-size:18px;
+    transition:.3s;
+}
+
+.exploratory-dropdown[open] .dropdown-arrow{
+    transform:rotate(90deg);
+}
+
+.dropdown-content{
+    border-top:1px solid var(--border);
+    padding:28px;
+}

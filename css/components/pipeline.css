@@ -1,0 +1,80 @@
+/* ---- pipeline / jobs ---- */
+.pipeline{
+  position:relative;
+  padding:8px 0 40px;
+}
+.connector{
+  position:absolute;
+  left:39px;
+  top:14px;
+  bottom:60px;
+  width:1px;
+  background:var(--border);
+}
+@media (max-width:520px){ .connector{ display:none; } }
+
+.job{
+  position:relative;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-left:3px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+  overflow:hidden;
+  transition:border-color 0.2s ease;
+}
+.job.accent-blue{ border-left-color:var(--accent-blue); }
+.job.accent-purple{ border-left-color:var(--accent-purple); }
+.job.accent-green{ border-left-color:var(--accent-green); }
+.job.accent-orange{ border-left-color:var(--accent-orange); }
+.job.accent-pink{ border-left-color:var(--accent-pink); }
+.job summary{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  cursor:pointer;
+}
+.job summary::-webkit-details-marker{ display:none; }
+
+.job-status{
+  font-family:'JetBrains Mono', monospace;
+  font-size:13px;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.job-status.success{ color:var(--green); background:var(--green-bg); }
+.job-status.warn{ color:var(--yellow); background:var(--yellow-bg); }
+.job-status.queued{ color:var(--text-dim); background:var(--panel-2); font-size:10px; }
+
+.job-name{
+  font-family:'JetBrains Mono', monospace;
+  font-size:14px;
+  font-weight:500;
+  flex:1;
+}
+.job-meta{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--text-dim);
+}
+.chev{
+  color:var(--text-dim);
+  font-size:14px;
+  transition:transform 0.2s ease;
+}
+.job[open] .chev{ transform:rotate(90deg); }
+
+.job-body{
+  padding:0 16px 20px 50px;
+  border-top:1px solid var(--border);
+  padding-top:16px;
+}
+.job-body p{ color:var(--text); font-size:14px; max-width:600px; }
+.job-body p + p{ margin-top:12px; }

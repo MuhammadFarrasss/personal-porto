@@ -1,0 +1,51 @@
+.layout{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 20px;
+  display:flex;
+  gap:48px;
+  align-items:flex-start;
+}
+
+.sidebar{
+  position:sticky;
+  top:76px;
+  width:190px;
+  flex-shrink:0;
+  display:none;
+  padding-top:40px;
+}
+
+@media (min-width:980px){ .sidebar{ display:block; } }
+.sidebar-title{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--text-dim);
+  margin-bottom:10px;
+}
+
+.sidebar-link:hover{ background:var(--panel-2); color:var(--text); }
+.sidebar-link.active{
+  background:var(--panel-2);
+  color:var(--text);
+  font-weight:600;
+  position:relative;
+}
+.sidebar-link.active::before{
+  content:"";
+  position:absolute;
+  left:-12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:3px;
+  height:16px;
+  border-radius:2px;
+  background:var(--blue);
+}
+
+.content{ flex:1; 
+  min-width:0; 
+  max-width:700px; 
+}

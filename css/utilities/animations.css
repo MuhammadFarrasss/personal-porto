@@ -1,0 +1,168 @@
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+/* Spin */
+
+@keyframes spin {
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* Blink Cursor */
+
+@keyframes blink {
+
+    50%{
+        opacity:0;
+    }
+
+}
+
+/* Fade Up */
+
+@keyframes fadeUp {
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Fade In */
+
+@keyframes fadeIn {
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* Pop */
+
+@keyframes pop {
+
+    0%{
+
+        transform:scale(.7);
+        opacity:0;
+
+    }
+
+    80%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+
+/* Confetti */
+
+@keyframes confettiFall {
+
+    from{
+
+        transform:translateY(-120vh) rotate(0deg);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(120vh) rotate(720deg);
+        opacity:0;
+
+    }
+
+}
+
+/* Toast */
+
+@keyframes toastShow {
+
+    from{
+
+        opacity:0;
+        transform:translate(-50%,-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translate(-50%,0);
+
+    }
+
+}
+
+/* ==========================================
+   ANIMATION CLASSES
+========================================== */
+
+.fade-up{
+
+    animation:fadeUp .6s ease forwards;
+
+}
+
+.fade-in{
+
+    animation:fadeIn .5s ease forwards;
+
+}
+
+.pop{
+
+    animation:pop .4s ease;
+
+}
+
+.spinning{
+
+    animation:spin .8s linear infinite;
+
+}
+
+.confetti{
+
+    position:fixed;
+    top:-20px;
+    width:10px;
+    height:10px;
+    border-radius:2px;
+    animation:confettiFall 4s linear forwards;
+    pointer-events:none;
+    z-index:9999;
+
+}

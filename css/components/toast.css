@@ -1,0 +1,32 @@
+
+/* ---- toast ---- */
+.toast{
+  position:fixed;
+  top:16px;
+  left:50%;
+  transform:translateX(-50%) translateY(-16px);
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12.5px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.3s ease, transform 0.3s ease;
+  z-index:100;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+.toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+.toast-icon{ color:var(--green); }
+.toast-text{ color:var(--text); }
+
+@media print{
+  .topbar, .icon-btn, .connector, .board{ display:none; }
+  body{ background:#fff; color:#000; }
+  .job{ border:1px solid #ccc; break-inside:avoid; }
+  .job-status.success{ color:#000 !important; background:#fff !important; }
+}

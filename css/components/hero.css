@@ -1,0 +1,80 @@
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    padding:40px 0 32px;
+}
+
+.run-meta{
+    margin-bottom:20px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+}
+
+.run-meta span{
+    color:var(--blue);
+}
+
+.hero-main{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:20px;
+}
+
+.avatar{
+    width:56px;
+    height:56px;
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        var(--accent-blue),
+        var(--accent-purple) 35%,
+        var(--accent-green) 65%,
+        var(--accent-pink)
+    );
+
+    color:#fff;
+    font-family:'JetBrains Mono', monospace;
+    font-size:16px;
+    font-weight:600;
+}
+
+.hero h1{
+    margin-bottom:4px;
+    font-size:26px;
+    font-weight:600;
+}
+
+.hero-tagline{
+    max-width:460px;
+    color:var(--text-dim);
+    font-size:15px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+/* ==========================================
+   CONTACT LINKS
+========================================== */
+
+.contact-links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:14px;
+}

@@ -15,13 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/hero.css">
-<link rel="stylesheet" href="css/case-study.css">
-<link rel="stylesheet" href="css/playground.css">
-<link rel="stylesheet" href="css/lightbox.css">
-<link rel="stylesheet" href="css/animations.css">
-</head>
+<link rel="stylesheet" href="css/style.css">
 <body>
 
 <div class="intro" id="intro">
@@ -150,7 +144,7 @@
 
       <div class="metrics">
         <div class="metric"><strong>12/12</strong><span>test case pass</span></div>
-        <div class="metric"><strong>4 bln</strong><span>selesai tepat waktu</span></div>
+        <div class="metric"><strong>4 bulan</strong><span>selesai tepat waktu</span></div>
         <div class="metric"><strong>4 orang</strong><span>anggota tim</span></div>
       </div>
 
@@ -191,7 +185,7 @@
           <button class="gallery-thumb" data-full="assets/addKendaraan.png">
             <img src="assets/addKendaraan.png" alt="Screenshot tambah data kendaraan">
           </button>
-          <figcaption>tambah kendaraan</figcaption>
+          <figcaption>input kendaraan</figcaption>
         </figure>
         <figure class="gallery-item">
           <button class="gallery-thumb" data-full="assets/generateKey.png">
@@ -224,268 +218,232 @@
           <figcaption>reimburse bensin</figcaption>
         </figure>
       </div>
-    </div>
-  </details>
+      <p class="lane-label" style="margin-top:24px;">project exhibition</p>
 
-  <section class="playground" id="playground">
+<div class="exhibition">
 
-    <div class="playground-header">
+    <figure class="exhibition-item">
 
-        <div class="playground-title">
-
-            <h2>🧪 Exploratory Testing Lab</h2>
-
-            <p>
-                Click every challenge and see what happens.
-            </p>
-
-        </div>
-
-        <div class="playground-stats">
-
-            <div class="pg-stat">
-
-                <h4 id="coverageValue">0%</h4>
-
-                <span>Coverage</span>
-
-            </div>
-
-            <div class="pg-stat">
-
-                <h4 id="testingTimer">
-
-                    00:00
-
-                </h4>
-
-                <span>Duration</span>
-
-            </div>
-
-            <div class="pg-stat">
-
-                <h4 id="bugCounter">
-
-                    0
-
-                </h4>
-
-                <span>Bugs Found</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="coverage-box">
-
-        <div class="coverage-top">
-
-            <span>Testing Coverage</span>
-
-            <span id="coveragePercent">
-                0%
-            </span>
-
-        </div>
-
-        <div class="coverage">
-
-            <div class="coverage-fill"></div>
-
-        </div>
-
-    </div>
-
-    <div class="terminal">
-
-        <div class="terminal-header">
-
-            <span class="term-dot term-red"></span>
-
-            <span class="term-dot term-yellow"></span>
-
-            <span class="term-dot term-green"></span>
-
-        </div>
-
-        <div
-            class="terminal-body"
-            id="terminalBody"
-        >
-
-        </div>
-
-    </div>
-
-    <div class="challenge-grid">
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            Empty Input
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            Invalid Email
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            Weak Password
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            SQL Injection
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            XSS Payload
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            Emoji Input
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            Unicode
-
-        </div>
-
-        <div class="challenge">
-
-            <div class="challenge-icon">
-
-                ○
-
-            </div>
-
-            Long Username
-
-        </div>
-
-    </div>
-
-    <div
-        class="achievement"
-        id="achievement"
-    >
-
-        <h4>
-
-            🏆 Achievement Unlocked
-
-        </h4>
-
-        <p>
-
-            QA Explorer
-
-        </p>
-
-    </div>
-
-    <div
-        style="
-        margin-top:30px;
-        display:flex;
-        gap:12px;
-        flex-wrap:wrap;
-        "
-    >
-
-        <button
-            class="btn primary"
-            id="restartTesting"
-        >
-
-            Restart Testing
-
+        <button class="gallery-thumb" data-full="assets/pameran.jpeg">
+            <img src="assets/pameran.jpeg"
+                 alt="Tim saat pameran project">
         </button>
 
+        <figcaption>
+            <strong>Final Project Exhibition</strong><br>
+            Presentasi hasil pengembangan sistem bersama tim & rekan-rekan pada pameran proyek.
+        </figcaption>
+
+    </figure>
+
+    <figure class="exhibition-item">
+
+        <button class="gallery-thumb" data-full="assets/exhibition/banner.jpg">
+            <img src="assets/exhibition/banner.jpg"
+                 alt="Banner project">
+        </button>
+
+        <figcaption>
+            <strong>Project Banner</strong><br>
+            Banner yang digunakan saat presentasi dan proses penilaian proyek.
+        </figcaption>
+    </figure>
     </div>
+    </div>
+  </details>
+<details class="exploratory-dropdown" id="exploratoryDropdown">
 
-</section>
+    <summary>
 
-<div class="pipeline-success" id="pipelineSuccess">
+        <div class="dropdown-left">
+
+            <span class="dropdown-icon">🧪</span>
+
+            <div>
+
+                <h3>Exploratory Testing Lab</h3>
+
+                <p>Interactive QA Playground</p>
+
+            </div>
+
+        </div>
+
+        <span class="dropdown-arrow">▶</span>
+
+    </summary>
+
+    <div class="dropdown-content">
+
+        <section class="playground" id="playground">
+
+            <div class="playground-stats">
+
+                <div class="pg-stat">
+
+                    <h4 id="coverageValue">0%</h4>
+
+                    <span>Coverage</span>
+
+                </div>
+
+                <div class="pg-stat">
+
+                    <h4 id="testingTimer">00:00</h4>
+
+                    <span>Duration</span>
+
+                </div>
+
+                <div class="pg-stat">
+
+                    <h4 id="bugCounter">0</h4>
+
+                    <span>Bugs Found</span>
+
+                </div>
+
+            </div>
+
+            <div class="coverage-box">
+
+                <div class="coverage-top">
+
+                    <span>Testing Coverage</span>
+
+                    <span id="coveragePercent">0%</span>
+
+                </div>
+
+                <div class="coverage">
+
+                    <div class="coverage-fill"></div>
+
+                </div>
+
+            </div>
+
+            <div class="terminal">
+
+                <div class="terminal-header">
+
+                    <span class="term-dot term-red"></span>
+
+                    <span class="term-dot term-yellow"></span>
+
+                    <span class="term-dot term-green"></span>
+
+                </div>
+
+                <div
+                    class="terminal-body"
+                    id="terminalBody"
+                ></div>
+
+            </div>
+
+            <div class="challenge-grid">
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    Empty Input
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    Invalid Email
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    Weak Password
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    SQL Injection
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    XSS Payload
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    Emoji Input
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    Unicode
+                </div>
+
+                <div class="challenge">
+                    <div class="challenge-icon">○</div>
+                    Long Username
+                </div>
+
+            </div>
+
+            <div
+                class="achievement"
+                id="achievement"
+            >
+                <h4>🏆 Achievement Unlocked</h4>
+
+                <p>QA Explorer</p>
+
+            </div>
+            <div
+                style="
+                margin-top:30px;
+                display:flex;
+                gap:12px;
+                flex-wrap:wrap;
+                "
+            >
+                <button
+                    class="btn primary"
+                    id="restartTesting"
+                >
+                    Restart Testing
+                </button>
+            </div>
+        </section>
+    </div>
+</details>
+
+<div
+    class="pipeline-success"
+    id="pipelineSuccess"
+>
+
     <div class="pipeline-card">
 
         <div class="pipeline-check">
             ✓
         </div>
-
-        <h2>Pipeline Passed</h2>
-
+        <h2>
+            Pipeline Passed
+        </h2>
         <p>
             All exploratory testing challenges completed successfully.
         </p>
-
         <div class="pipeline-summary">
-
             <div>
                 Coverage
                 <br>
-                <strong id="pipelineCoverage">100%</strong>
+                <strong id="pipelineCoverage">
+                    100%
+                </strong>
             </div>
-
             <div>
                 Status
                 <br>
-                <strong>PASSED</strong>
+                <strong>
+                    PASSED
+                </strong>
             </div>
         </div>
     </div>
@@ -501,7 +459,7 @@
     <div class="job-body">
       <p>Ada project yang butuh direncanakan dan diuji sampai tuntas? Terbuka untuk kesempatan magang maupun posisi entry-level di bidang QA dan IT Project Management.</p>
       <div class="contact-links">
-        <a href="mailto:muhammadfarraaas@gmail.com" class="btn primary email-copy-btn" data-email="muhammadfarraaas@gmail.com">email saya</a>
+        <a href="mailto:muhammadfarraaas@gmail.com" class="btn primary email-copy-btn" data-email="muhammadfarraaas@gmail.com">Get in Touch</a>
         <a href="https://www.linkedin.com/in/muhammadfarraaas/" class="btn">linkedin</a>
         <a href="https://github.com/ariqhisyam/Katalon-Admin_SDC" class="btn">github</a>
         <a href="https://www.instagram.com/muhammadfarraaas_?igsh=NjB5ejB3cXJybjVy" class="btn">instagram</a>

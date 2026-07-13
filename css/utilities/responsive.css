@@ -1,0 +1,100 @@
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+
+    .intro-cursor{
+        animation:none;
+    }
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:768px){
+
+    .playground{
+        padding:18px;
+    }
+
+    .playground-header{
+        flex-direction:column;
+    }
+
+    .playground-title h2{
+        font-size:24px;
+    }
+
+    .playground-stats{
+        width:100%;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .pg-stat{
+        min-width:auto;
+    }
+
+    .challenge-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pipeline-summary{
+        flex-direction:column;
+    }
+
+    .achievement{
+        right:16px;
+        left:16px;
+        width:auto;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:520px){
+
+    .connector{
+        display:none;
+    }
+
+    .board{
+        grid-template-columns:1fr;
+    }
+
+    .matrix{
+        grid-template-columns:1fr;
+    }
+
+    .metrics{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media (min-width:980px){
+
+    .sidebar{
+        display:block;
+    }
+
+}

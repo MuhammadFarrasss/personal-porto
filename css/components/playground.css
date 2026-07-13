@@ -12,7 +12,6 @@
     position:relative;
     overflow:hidden;
 }
-
 .playground::before{
     content:"";
     position:absolute;
@@ -83,6 +82,30 @@
 /* ===========================
    COVERAGE
 =========================== */
+.coverage{
+    width:100%;
+    height:12px;
+    background:var(--panel-2);
+    border:1px solid var(--border);
+    border-radius:999px;
+    overflow:hidden;
+    position:relative;
+}
+
+.coverage-fill{
+    width:0%;
+    height:100%;
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        var(--accent-green),
+        var(--green)
+    );
+    transition:
+        width .45s ease,
+        background .3s ease;
+}
 
 .coverage-box{
     margin-top:28px;
@@ -109,12 +132,13 @@
     height:100%;
     background:linear-gradient(
         90deg,
-        #238636,
-        #2ea043,
-        #3fb950
+        var(--accent-green),
+        var(--green)
     );
     transition:width .4s ease;
 }
+
+
 
 /* ===========================
    TERMINAL
@@ -124,6 +148,7 @@
     margin-top:28px;
     border-radius:10px;
     overflow:hidden;
+    font-family:"JetBrains Mono", monospace;
     border:1px solid var(--border);
     background:#0b0f14;
     box-shadow:0 10px 25px rgba(0,0,0,.25);
@@ -203,14 +228,15 @@
 .challenge:hover{
     transform:translateY(-4px);
     border-color:var(--blue);
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
 }
 
-.challenge.completed{
+.challenge.done{
     border-color:var(--green);
     background:rgba(63,185,80,.08);
 }
 
-.challenge.completed::after{
+.challenge.done::after{
     content:"✓";
     position:absolute;
     right:14px;
@@ -232,7 +258,7 @@
     transition:.3s;
 }
 
-.challenge.completed .challenge-icon{
+.challenge.done .challenge-icon{
     background:var(--green);
     color:#fff;
     transform:scale(1.1);
@@ -317,6 +343,7 @@
     padding:32px;
     text-align:center;
     animation:popup .35s ease;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
 .pipeline-check{
@@ -427,7 +454,7 @@
     }
 }
 
-.challenge.completed{
+.challenge.done{
     animation:challengeDone .35s;
 }
 
@@ -453,6 +480,7 @@
         width:100%;
         display:grid;
         grid-template-columns:repeat(3,1fr);
+        grid-template-columns:1fr;
     }
 
     .pg-stat{
@@ -471,6 +499,7 @@
         right:16px;
         left:16px;
         width:auto;
+        backdrop-filter:blur(10px);
     }
 
 }

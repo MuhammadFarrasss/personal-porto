@@ -12,6 +12,7 @@ class ExploratoryLab {
         this.bugs = 0;
         this.startTime = null;
         this.timer = null;
+        this.isStarted = false;
 
         this.coverageFill = document.querySelector(".coverage-fill");
         this.coverageValue = document.getElementById("coverageValue");
@@ -36,21 +37,6 @@ class ExploratoryLab {
     }
 
     start() {
-
-        this.startTime = Date.now();
-
-        this.timer = setInterval(() => {
-
-            const sec = Math.floor((Date.now()-this.startTime)/1000);
-
-            const m = String(Math.floor(sec/60)).padStart(2,"0");
-
-            const s = String(sec%60).padStart(2,"0");
-
-            this.timerText.textContent = `${m}:${s}`;
-
-        },1000);
-
         this.restartBtn.addEventListener("click",()=>{
 
             this.reset();
@@ -71,6 +57,28 @@ class ExploratoryLab {
 
     }
 
+    startTimer(){
+
+    if(this.isStarted) return;
+
+    this.isStarted = true;
+
+    this.startTime = Date.now();
+
+    this.timer = setInterval(() => {
+
+        const sec = Math.floor((Date.now() - this.startTime) / 1000);
+
+        const m = String(Math.floor(sec / 60)).padStart(2,"0");
+
+        const s = String(sec % 60).padStart(2,"0");
+
+        this.timerText.textContent = `${m}:${s}`;
+
+    },1000);
+
+}
+
     log(text,type="info"){
 
         const div=document.createElement("div");
@@ -86,6 +94,8 @@ class ExploratoryLab {
     }
 
     runChallenge(card){
+        
+        this.startTimer();
 
         if(card.classList.contains("done")) return;
 
@@ -171,21 +181,29 @@ class ExploratoryLab {
 
     }
 
-    updateCoverage(){
+  updateCoverage(){
 
-        this.coverage=Math.round((this.completed/this.totalChallenges)*100);
+    this.coverage = Math.round(
+        (this.completed / this.totalChallenges) * 100
+    );
 
-        this.coverageValue.textContent = this.coverage + "%";
+    this.coverageValue.textContent = this.coverage + "%";
 
-        this.coveragePercent.textContent = this.coverage + "%";
+    this.coveragePercent.textContent = this.coverage + "%";
 
-    }
+    this.coverageFill.style.width = this.coverage + "%";
+
+}
 
     unlockAchievement(){
 
         this.achievement.classList.add("show");
 
         this.log("Achievement unlocked: QA Explorer","pass");
+
+        setTimeout(() => {
+        this.achievement.classList.remove("show");
+    }, 3500);
 
     }
 
@@ -254,6 +272,8 @@ class ExploratoryLab {
         this.coverage=0;
 
         this.bugs=0;
+
+        this.isStarted = false;
 
         this.coverageValue.textContent = "0%";
 

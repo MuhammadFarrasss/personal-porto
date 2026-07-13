@@ -1,0 +1,58 @@
+
+/* ---- topbar ---- */
+.topbar{
+  border-bottom:1px solid var(--border);
+  background:var(--panel);
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1080px;
+  margin:0 auto;
+  padding:12px 20px;
+}
+.repo{ display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:13px; }
+.repo-name{ color:var(--text); }
+.branch{ color:var(--text-dim); }
+.topbar-right{ display:flex; align-items:center; gap:10px; }
+.run-badge{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  font-weight:600;
+  padding:4px 10px;
+  border-radius:999px;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+.run-badge.success{ color:var(--green); background:var(--green-bg); }
+.icon-btn{
+  width:30px;
+  height:30px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  background:var(--panel-2);
+  color:var(--text);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  transition:border-color 0.15s ease;
+}
+.icon-btn:hover{ border-color:var(--text-dim); }
+.icon-btn.spinning{ animation:spin 0.6s linear infinite; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+.progress-bar{
+  height:2px;
+  background:var(--border);
+  max-width:1080px;
+  margin:0 auto;
+}
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-green), var(--accent-orange), var(--accent-pink));
+  transition:width 0.1s ease-out;
+}

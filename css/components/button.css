@@ -1,0 +1,14 @@
+
+.btn{
+  font-family:'JetBrains Mono', monospace;
+  font-size:13px;
+  font-weight:500;
+  padding:9px 16px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  background:var(--panel-2);
+  cursor:pointer;
+  transition:border-color 0.15s ease, transform 0.15s ease;
+}
+.btn:hover{ border-color:var(--text-dim); transform:translateY(-1px); }
+.btn.primary{ background:var(--green-bg); border-color:var(--green); color:var(--green); }

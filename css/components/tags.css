@@ -1,0 +1,19 @@
+/* ---- skills matrix ---- */
+.matrix{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.lane-label{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--text-dim);
+  margin-bottom:8px;
+}
+.tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.tag{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  padding:4px 9px;
+  border-radius:5px;
+  border:1px solid var(--border);
+}
+.tag.qa{ color:var(--green); background:var(--green-bg); border-color:transparent; }
+.tag.pm{ color:var(--blue); background:var(--blue-bg); border-color:transparent; }
+.tag.neutral{ color:var(--text-dim); background:var(--panel-2); border-color:transparent; }
