@@ -1,44 +1,57 @@
-function initIntro(){
+function initIntro() {
 
-const introText =
-"Memastikan sesuatu berjalan benar, dan berjalan tepat waktu.";
+    const introText =
+    "Finding problems before users do.";
 
-const typedText =
-document.getElementById("typedText");
+    const typedText =
+    document.getElementById("typedText");
 
-const intro =
-document.getElementById("intro");
+    const intro =
+    document.getElementById("intro");
 
-const btn =
-document.getElementById("introEnter");
+    const btn =
+    document.getElementById("introEnter");
 
-if(!typedText) return;
+    if(!typedText) return;
 
-let i=0;
+    let i = 0;
 
-function typing(){
+    function typing(){
 
-if(i<introText.length){
+        if(i < introText.length){
 
-typedText.textContent+=introText.charAt(i);
+            typedText.textContent += introText.charAt(i);
 
-i++;
+            i++;
 
-setTimeout(typing,35);
+            setTimeout(typing,35);
 
-}else{
+        }else{
 
-btn.classList.add("show");
+            btn.classList.add("show");
 
-}
+        }
 
-}
+    }
 
-typing();
+    document.addEventListener("bootFinished", () => {
 
-btn.onclick=()=>{
+        typedText.textContent = "";
+        i = 0;
 
-intro.classList.add("hide");
+        typing();
+
+    });
+
+    btn.onclick = () => {
+
+    intro.classList.add("hide");
+
+    if(typeof fadeInMusic === "function"){
+
+        fadeInMusic();
+
+    }
 
 };
 

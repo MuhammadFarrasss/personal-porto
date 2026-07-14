@@ -18,6 +18,29 @@
 <link rel="stylesheet" href="css/style.css">
 <body>
 
+  <div class="boot-screen" id="bootScreen">
+
+    <div class="boot-window">
+
+        <div class="boot-title">
+            github-actions.yml
+        </div>
+
+        <div class="boot-terminal" id="bootTerminal">
+
+            <div class="boot-line">Initializing workflow...</div>
+
+        </div>
+        <div class="boot-progress">
+
+            <div
+                class="boot-progress-fill"
+                id="bootProgress">
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="intro" id="intro">
   <p class="intro-eyebrow">$ FRS</p>
   <h1 class="intro-headline"><span id="typedText"></span><span class="intro-cursor">|</span></h1>
@@ -59,6 +82,7 @@
 <div class="content">
 
 <header class="hero">
+  <div class="hero-scan"></div>
   <p class="run-meta">workflow run <span>#1</span> · triggered by <span>career-search</span> · duration <span>4 bulan</span></p>
   <div class="hero-main">
     <div class="avatar" aria-hidden="true">MF</div>
@@ -68,7 +92,7 @@
     </div>
   </div>
   <div class="hero-actions">
-    <a href="CurriculumVitae_MuhammadFarras.pdf" class="btn primary">↓ resume.pdf</a>
+    <a href="assets/CurriculumVitae_MuhammadFarras.pdf" class="btn primary">↓ resume.pdf</a>
     <a href="mailto:muhammadfarraaas@gmail.com" class="btn email-copy-btn" data-email="muhammadfarraaas@gmail.com">email</a>
     <a href="https://www.linkedin.com/in/muhammadfarraaas/" class="btn">linkedin</a>
     <a href="https://github.com/MuhammadFarrasss" class="btn">github</a>
@@ -238,14 +262,14 @@
 
     <figure class="exhibition-item">
 
-        <button class="gallery-thumb" data-full="assets/exhibition/banner.jpg">
-            <img src="assets/exhibition/banner.jpg"
+        <button class="gallery-thumb" data-full="assets/banner.jpeg">
+            <img src="assets/banner.jpeg"
                  alt="Banner project">
         </button>
 
         <figcaption>
             <strong>Project Banner</strong><br>
-            Banner yang digunakan saat presentasi dan proses penilaian proyek.
+            Menjadi tim ke-2 terbaik diantara 32 tim lain pada pameran proyek. 
         </figcaption>
     </figure>
     </div>
@@ -449,6 +473,63 @@
     </div>
 </div>
 
+<div class="bug-modal" id="bugModal">
+
+    <div class="bug-card">
+
+        <button class="bug-close" id="closeBug">✕</button>
+
+        <h2>🐞 Bug Report</h2>
+
+        <div class="bug-grid">
+
+            <div>
+                <span>ID</span>
+                <strong id="bugId">BUG-001</strong>
+            </div>
+
+            <div>
+                <span>Severity</span>
+                <strong id="bugSeverity">Medium</strong>
+            </div>
+
+            <div>
+                <span>Status</span>
+                <strong>Open</strong>
+            </div>
+
+            <div>
+                <span>Environment</span>
+                <strong>Chrome 138</strong>
+            </div>
+
+        </div>
+
+        <div class="bug-section">
+
+            <h4>Scenario</h4>
+
+            <p id="bugScenario"></p>
+
+        </div>
+
+        <div class="bug-section">
+
+            <h4>Expected</h4>
+
+            <p id="bugExpected"></p>
+
+        </div>
+        <div class="bug-section">
+
+            <h4>Actual</h4>
+
+            <p id="bugActual"></p>
+
+        </div>
+    </div>
+</div>
+
   <details class="job accent-pink" open id="jobContact">
     <summary>
       <span class="job-status success">✓</span>
@@ -488,6 +569,8 @@
   </div>
 </div>
 
+<script src="js/boot.js"></script>
+<script src="js/music.js"></script>
 <script src="js/intro.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/gallery.js"></script>

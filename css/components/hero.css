@@ -78,3 +78,97 @@
     flex-wrap:wrap;
     margin-top:14px;
 }
+
+/* ==========================================
+   HERO FX
+========================================== */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    padding:40px 0 32px;
+}
+
+/* Aurora */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:-25%;
+    z-index:-2;
+
+    background:
+        radial-gradient(circle at 20% 25%,
+        rgba(88,166,255,.22),
+        transparent 28%),
+
+        radial-gradient(circle at 80% 20%,
+        rgba(188,140,255,.18),
+        transparent 30%),
+
+        radial-gradient(circle at 55% 80%,
+        rgba(63,185,80,.12),
+        transparent 28%);
+
+    filter:blur(70px);
+
+    animation:auroraMove 18s ease-in-out infinite alternate;
+}
+
+/* Beam */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:4px;
+
+    left:-250px;
+    top:45%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(88,166,255,.55),
+        rgba(188,140,255,.55),
+        transparent
+    );
+
+    filter:blur(8px);
+
+    transform:rotate(-18deg);
+
+    animation:beamMove 12s linear infinite;
+
+    z-index:-1;
+}
+
+.hero-scan{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+
+    filter:blur(1px);
+
+    animation:scanHero 5s ease-in-out infinite;
+
+    opacity:.4;
+
+    pointer-events:none;
+
+}

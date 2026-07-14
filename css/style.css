@@ -18,6 +18,7 @@
 @import url("components/gallery.css");
 @import url("components/lightbox.css");
 @import url("components/toast.css");
+@import url("components/boot.css");
 
 /* Utilities */
 @import url("utilities/animations.css");

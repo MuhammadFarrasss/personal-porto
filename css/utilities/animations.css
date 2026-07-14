@@ -166,3 +166,97 @@
     z-index:9999;
 
 }
+
+/* ==========================================
+   HERO EFFECTS
+========================================== */
+
+@keyframes auroraMove{
+
+    0%{
+
+        transform:
+            translate(-3%,-2%)
+            scale(1);
+
+    }
+
+    50%{
+
+        transform:
+            translate(3%,2%)
+            scale(1.12);
+
+    }
+
+    100%{
+
+        transform:
+            translate(-2%,3%)
+            scale(1);
+
+    }
+
+}
+
+@keyframes beamMove{
+
+    0%{
+
+        transform:
+            translateX(-150px)
+            rotate(-18deg);
+
+        opacity:.15;
+
+    }
+
+    50%{
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        transform:
+            translateX(250px)
+            rotate(-18deg);
+
+        opacity:.15;
+
+    }
+
+}
+
+@keyframes scanHero{
+
+    0%{
+
+        top:-10%;
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        top:55%;
+
+    }
+
+    100%{
+
+        top:110%;
+
+        opacity:0;
+
+    }
+
+}

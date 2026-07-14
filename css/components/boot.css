@@ -1,0 +1,129 @@
+/* ==========================================
+   BOOT SEQUENCE
+========================================== */
+
+.boot-screen{
+
+    position:fixed;
+    inset:0;
+
+    background:#0d1117;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    transition:.7s;
+}
+
+.boot-screen.hide{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+.boot-window{
+
+    width:min(700px,90%);
+    border:1px solid #30363d;
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:#161b22;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.boot-title{
+
+    padding:14px 20px;
+
+    background:#21262d;
+
+    color:#8b949e;
+
+    font-family:"JetBrains Mono", monospace;
+    font-size:13px;
+
+}
+
+.boot-terminal{
+
+    height:260px;
+
+    overflow:hidden;
+
+    padding:22px;
+
+    background:#0d1117;
+
+    font-family:"JetBrains Mono", monospace;
+    font-size:13px;
+
+    line-height:2;
+
+    color:#58a6ff;
+
+}
+
+.boot-line{
+
+    opacity:0;
+
+    animation:fade .35s forwards;
+
+}
+
+.boot-success{
+
+    color:#3fb950;
+
+}
+
+.boot-progress{
+
+    height:6px;
+
+    background:#21262d;
+
+}
+
+.boot-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #58a6ff,
+        #bc8cff,
+        #3fb950
+    );
+
+    transition:.25s;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}

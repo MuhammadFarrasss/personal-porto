@@ -30,11 +30,40 @@ class ExploratoryLab {
 
         this.pipeline = document.getElementById("pipelineSuccess");
 
+        this.bugModal = document.getElementById("bugModal");
+        this.closeBug = document.getElementById("closeBug");
+        this.bugId = document.getElementById("bugId");
+        this.bugSeverity = document.getElementById("bugSeverity");
+        this.bugScenario = document.getElementById("bugScenario");
+        this.bugExpected = document.getElementById("bugExpected");
+        this.bugActual = document.getElementById("bugActual");
+
         this.restartBtn = document.getElementById("restartTesting");
 
+        this.successSound = new Audio("assets/sound/success.wav");
+        this.achievementSound = new Audio("assets/sound/finish.wav");
+
+        this.successSound.preload = "auto";
+        this.achievementSound.preload = "auto";
+        this.successSound.volume = 0.05;   
+        this.achievementSound.volume = 0.15  
+        
         this.start();
 
     }
+
+    playSound(sound){
+
+    sound.pause();
+    sound.currentTime = 0;
+
+    const promise = sound.play();
+
+    if(promise !== undefined){
+        promise.catch(err => console.log(err));
+    }
+
+}
 
     start() {
         this.restartBtn.addEventListener("click",()=>{
@@ -54,6 +83,16 @@ class ExploratoryLab {
         });
 
         this.log("Exploratory Testing Started","info");
+
+        this.bugModal.addEventListener("click", (e)=>{
+
+            if(e.target===this.bugModal){
+
+        this.bugModal.classList.remove("show");
+
+    }
+
+});
 
     }
 
@@ -161,9 +200,13 @@ class ExploratoryLab {
 
             this.bugCounter.textContent=this.bugs;
 
-        }
+            this.showBugReport(data);
 
+
+        }
         this.completed++;
+
+        this.playSound(this.successSound);
 
         this.updateCoverage();
 
@@ -207,7 +250,30 @@ class ExploratoryLab {
 
     }
 
+    showBugReport(data){
+
+    this.bugId.textContent =
+        "BUG-" + String(this.bugs).padStart(3,"0");
+
+    this.bugSeverity.textContent =
+        "Medium";
+
+    this.bugScenario.textContent =
+        data.text;
+
+    this.bugExpected.textContent =
+        "System should validate the input correctly.";
+
+    this.bugActual.textContent =
+        "Unexpected behaviour detected during exploratory testing.";
+
+    this.bugModal.classList.add("show");
+
+}
+
     finish(){
+
+        this.playSound(this.achievementSound);
 
         clearInterval(this.timer);
 
@@ -296,9 +362,6 @@ class ExploratoryLab {
         });
 
         this.achievement.classList.remove("show");
-
-        this.start();
-
     }
 
 }
@@ -312,3 +375,42 @@ function initPlayground() {
     }
 
 }
+
+
+
+this.bugDatabase = {
+
+    "Weak Password":{
+
+        id:"BUG-003",
+
+        severity:"Medium",
+
+        expected:"Password dengan panjang kurang dari 8 karakter harus ditolak.",
+
+        actual:"Sistem tetap mengizinkan password lemah.",
+
+    },
+
+    "Emoji Input":{
+
+        id:"BUG-006",
+
+        severity:"Low",
+
+        expected:"Emoji harus tervalidasi dengan benar.",
+
+        actual:"Karakter emoji menyebabkan format tampilan rusak."
+
+    }
+
+};
+
+this.bugModal = document.getElementById("bugModal");
+this.closeBug = document.getElementById("closeBug");
+
+this.bugId = document.getElementById("bugId");
+this.bugSeverity = document.getElementById("bugSeverity");
+this.bugScenario = document.getElementById("bugScenario");
+this.bugExpected = document.getElementById("bugExpected");
+this.bugActual = document.getElementById("bugActual");
