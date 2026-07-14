@@ -1,4 +1,4 @@
-function initPipeline(){
+export function initPipeline(){
 
     const dropdown = document.getElementById("exploratoryDropdown");
 

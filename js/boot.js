@@ -1,14 +1,14 @@
 const lines = [
 
-"✓ Installing dependencies...",
-"✓ Loading portfolio assets...",
-"✓ Loading QA profile...",
-"✓ Initializing pipeline...",
-"✓ Executing workflow...",
-"✓ Running test cases...",
-"✓ 12 test cases passed",
-"✓ Deploying production...",
-"✓ Deployment successful"
+    "✓ Installing dependencies...",
+    "✓ Loading portfolio assets...",
+    "✓ Loading QA profile...",
+    "✓ Initializing pipeline...",
+    "✓ Executing workflow...",
+    "✓ Running test cases...",
+    "✓ 12 test cases passed",
+    "✓ Deploying production...",
+    "✓ Deployment successful"
 
 ];
 
@@ -18,48 +18,55 @@ const screen = document.getElementById("bootScreen");
 
 let current = 0;
 
-function nextLine(){
+function nextLine() {
 
-    if(current >= lines.length){
-
-    setTimeout(() => {
-
-        screen.classList.add("hide");
+    if (current >= lines.length) {
 
         setTimeout(() => {
 
-            document.dispatchEvent(
-                new CustomEvent("bootFinished")
-            );
+            screen.classList.add("hide");
 
-        },700); 
+            setTimeout(() => {
 
-    },500);
+                document.dispatchEvent(
+                    new CustomEvent("bootFinished")
+                );
 
-    return;
+            }, 700);
 
-}
+        }, 500);
 
-    const div=document.createElement("div");
+        return;
 
-    div.className="boot-line boot-success";
+    }
 
-    div.textContent=lines[current];
+    const div = document.createElement("div");
+
+    div.className = "boot-line boot-success";
+
+    div.textContent = lines[current];
 
     terminal.appendChild(div);
 
-    terminal.scrollTop=terminal.scrollHeight;
+    terminal.scrollTop = terminal.scrollHeight;
 
     current++;
 
-    progress.style.width=(current/lines.length*100)+"%";
+    progress.style.width =
+        (current / lines.length * 100) + "%";
 
-    setTimeout(nextLine,300);
+    setTimeout(nextLine, 300);
 
 }
 
-window.addEventListener("load",()=>{
+export function initBoot() {
 
-    setTimeout(nextLine,300);
+    current = 0;
 
-});
+    terminal.innerHTML = "";
+
+    progress.style.width = "0%";
+
+    setTimeout(nextLine, 300);
+
+}

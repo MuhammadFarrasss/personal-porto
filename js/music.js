@@ -1,70 +1,75 @@
-const bgMusic = new Audio("assets/sound/jazz.mp3");
+export const bgMusic = new Audio("assets/sound/jazz.mp3");
 
 bgMusic.loop = true;
 bgMusic.volume = 0;
 
-const musicBtn = document.getElementById("musicToggle");
-
 let musicEnabled =
     localStorage.getItem("music") !== "off";
 
-function fadeInMusic(){
+export function fadeInMusic() {
 
-    if(!musicEnabled) return;
+    if (!musicEnabled) return;
 
-    bgMusic.play().catch(()=>{});
+    bgMusic.play().catch(() => {});
 
     let volume = 0;
 
-    const fade = setInterval(()=>{
+    const fade = setInterval(() => {
 
         volume += 0.01;
 
-        bgMusic.volume = Math.min(volume,0.08);
+        bgMusic.volume = Math.min(volume, 0.08);
 
-        if(volume >= 0.08){
+        if (volume >= 0.08) {
 
             clearInterval(fade);
 
         }
 
-    },200);
+    }, 200);
 
 }
 
-function updateButton(){
+function updateButton(btn) {
 
-    if(!musicBtn) return;
+    if (!btn) return;
 
-    musicBtn.classList.toggle("active",musicEnabled);
+    btn.classList.toggle("active", musicEnabled);
 
-    musicBtn.textContent =
+    btn.textContent =
         musicEnabled ? "♫" : "♪";
 
 }
 
-updateButton();
+export function initMusic() {
 
-musicBtn?.addEventListener("click",()=>{
+    const musicBtn =
+        document.getElementById("musicToggle");
 
-    musicEnabled = !musicEnabled;
+    updateButton(musicBtn);
 
-    localStorage.setItem(
-        "music",
-        musicEnabled ? "on" : "off"
-    );
+    musicBtn?.addEventListener("click", () => {
 
-    if(!musicEnabled){
+        musicEnabled = !musicEnabled;
 
-        bgMusic.pause();
-        bgMusic.currentTime = 0;
+        localStorage.setItem(
+            "music",
+            musicEnabled ? "on" : "off"
+        );
 
-    }else{
+        if (!musicEnabled) {
 
-        fadeInMusic();
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
 
-    }
+        } else {
 
-    updateButton();
+            fadeInMusic();
 
-});
+        }
+
+        updateButton(musicBtn);
+
+    });
+
+}

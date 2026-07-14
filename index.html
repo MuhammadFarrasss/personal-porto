@@ -438,12 +438,13 @@
     </div>
 </details>
 
-<div
-    class="pipeline-success"
-    id="pipelineSuccess"
->
+<div class="pipeline-success" id="pipelineSuccess">
 
     <div class="pipeline-card">
+
+      <button class="pipeline-close" id="closePipeline">
+            ✕
+</button>
 
         <div class="pipeline-check">
             ✓
@@ -455,6 +456,11 @@
             All exploratory testing challenges completed successfully.
         </p>
         <div class="pipeline-summary">
+
+          <button class="btn primary" id="viewReport">
+            View Test Report
+          </button>
+
             <div>
                 Coverage
                 <br>
@@ -471,6 +477,89 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="report-modal" id="reportModal">
+
+    <div class="report-card">
+
+        <button class="report-close" id="closeReport">
+            ✕
+        </button>
+
+        <h2>Exploratory Test Report</h2>
+
+        <div class="report-grid">
+
+            <div class="report-item">
+                <span>Project</span>
+                <strong>Vehicle Maintenance App</strong>
+            </div>
+
+            <div class="report-item">
+                <span>Tester</span>
+                <strong>Muhammad Farras</strong>
+            </div>
+
+            <div class="report-item">
+                <span>Coverage</span>
+                <strong id="reportCoverage">100%</strong>
+            </div>
+
+            <div class="report-item">
+                <span>Bugs Found</span>
+                <strong id="reportBug">0</strong>
+            </div>
+
+            <div class="report-item">
+                <span>Duration</span>
+                <strong id="reportDuration">00:00</strong>
+            </div>
+
+            <div class="report-item">
+                <span>Status</span>
+                <strong class="passed">
+                    PASSED
+                </strong>
+            </div>
+
+        </div>
+
+        <div class="report-section">
+
+            <h3>Summary</h3>
+
+            <p>
+
+                Exploratory testing completed successfully.
+                All planned scenarios were executed and
+                application behavior was validated.
+
+            </p>
+
+        </div>
+
+        <div class="report-section">
+
+            <h3>Executed Scenarios</h3>
+
+            <ul>
+
+                <li>✓ Empty Input Validation</li>
+                <li>✓ Invalid Email</li>
+                <li>⚠ Weak Password</li>
+                <li>✓ SQL Injection</li>
+                <li>✓ XSS Payload</li>
+                <li>⚠ Emoji Input</li>
+                <li>✓ Unicode</li>
+                <li>✓ Long Username</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
 </div>
 
 <div class="bug-modal" id="bugModal">
@@ -569,15 +658,6 @@
   </div>
 </div>
 
-<script src="js/boot.js"></script>
-<script src="js/music.js"></script>
-<script src="js/intro.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/playground.js"></script>
-<script src="js/pipeline.js"></script>
-<script src="js/toast.js"></script>
-
-<script src="script.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

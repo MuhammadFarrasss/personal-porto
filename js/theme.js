@@ -1,4 +1,4 @@
-function initTheme(){
+export function initTheme(){
 
 const root=document.documentElement;
 

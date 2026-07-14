@@ -1,4 +1,4 @@
-function initIntro() {
+export function initIntro() {
 
     const introText =
     "Finding problems before users do.";

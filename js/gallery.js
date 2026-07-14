@@ -1,4 +1,4 @@
-function initGallery(){
+export function initGallery(){
 
 const lightbox=
 document.getElementById("lightbox");
